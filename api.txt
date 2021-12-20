@@ -1,0 +1,5 @@
+current weather (metric+imperal)
+http://dataservice.accuweather.com/currentconditions/v1/55488?apikey=pGuO66eACAaohMRWg609GScW6WhSfrBS&details=true
+
+12 hours forecast (metric) =>
+http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/55488?apikey=pGuO66eACAaohMRWg609GScW6WhSfrBS&metric=true

@@ -1,0 +1,348 @@
+:root{
+    --current-weather-digit-font-size: 7rem;
+    --current-weather-digit-type-font-size:calc(var(--current-weather-digit-font-size) / 3.5);
+    --current-weather-icon-size: calc(var(--current-weather-digit-font-size) * 1.3);
+    --feels-temp-font-size: calc(var(--current-weather-digit-font-size) / 5.7);
+    --current-weather-text-font-size: 1.2rem;
+    --sideBar-main-color: orange;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.nightBackground{
+    background: url('./nightBackground.jpg') no-repeat;
+    background-size: cover;
+}
+
+.dayBackground{
+    background: url('./dayBackground.jpg') no-repeat;
+}
+
+.weatherPreviewBG{
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/* Side Menu Button  */
+
+.sideMenuButtonSection{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 2.7rem;
+    z-index: 3;
+    position: absolute;
+}
+
+.sideMenuButtonSection div{
+    background-color: black;
+    width: 100%;
+    height: .45rem;
+    margin-bottom: .25rem;
+    transition: all .1s ease-in;
+}
+
+.closeSideMenuButton div:nth-child(1){
+    transform: translateY(80%) rotate(45deg);
+}
+
+.closeSideMenuButton div:nth-child(2){
+    display: none;
+}
+
+.closeSideMenuButton div:nth-child(3){
+    transform: translateY(-80%) rotate(-45deg);
+}
+
+.darkBackground{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    display:none;
+}
+
+.sideMenuPanel{
+    position: absolute;
+    background-color: rgb(233, 231, 231);
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 300px;
+    height: 100vh;
+    display: none;
+}
+
+.sideMenuButtonSection:hover{
+    cursor: pointer;
+}
+
+.sideMenuButtonSection:hover > div{
+    background-color: var(--sideBar-main-color);;
+}
+
+.sideMenuContainer{
+    height: 80%;
+    width: 80%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto auto;
+
+    overflow-y: scroll;
+}
+
+.sideBarTitle{
+    font-size: 2.5rem;
+    color: rgb(116, 116, 116);
+}
+
+
+.cityListSection{
+    margin-top: .5rem;
+}
+
+.cityItemSection{
+    position: relative;
+    margin: .5rem 0;
+    display: flex;
+    align-items: center;
+    
+    height: 2.5rem;
+}
+
+.cityNameDiv{
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.selectorDiv{
+    width: 10px;
+    height: 100%;
+}
+
+
+
+.cityItemSection:hover > .selectorDiv{
+    background-color: var(--sideBar-main-color);
+}
+
+.cityItemSection:hover{
+    cursor: pointer;
+    background-color: rgba(136, 136, 136, 0.2);
+}
+
+.selectedCity{
+    background-color: rgba(136, 136, 136, 0.2);
+}
+
+.selectedCity .selectorDiv{
+    background-color: var(--sideBar-main-color);
+}
+
+
+/*  */
+.weatherDetailSection{
+    background-color: rgba(255, 255, 255, 0.6);
+    display: inline-flex;
+    position: relative;
+    height: 70%;
+    width: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 3rem;
+    padding: 0 1rem;
+}
+
+.leftPartPanel{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 3rem;
+    
+}
+
+
+.rightPartPanel{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+
+    margin-left: 3rem;
+}
+
+/* Current Digit Section */
+
+.currentWeatherImagery{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentWeatherSection{
+    display: inline-flex;
+}
+
+.currentWeatherNumaricSection{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.currentWeatherDigit{
+    display: inline-flex;
+}
+
+.currentWeatherText{
+    font-size: var(--current-weather-text-font-size);
+    font-weight: bold;
+}
+
+.feelsSection{
+    font-size: var(--feels-temp-font-size);
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.currentConditionHighTemp, .currentConditionLowTemp{
+    font-size: 1.1rem;
+    margin-left: 2rem;
+}
+
+.currentConditionHighTemp{
+    margin-top: 1rem;
+}
+
+/*  */
+.currentWeatherIcon{
+    width: var(--current-weather-icon-size);
+}
+
+.nowWeatherDigit{
+    font-size: var(--current-weather-digit-font-size);
+    font-weight: normal;
+}
+
+.tempDigitType{
+    font-size: var(--current-weather-digit-type-font-size);
+    margin-top: auto;
+    transform: translate(-140%,-40%);
+    color: rgb(59, 59, 59)
+}
+
+.cityLocationSection{
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.currentWeatherStatus{
+    margin-top: 1rem;
+}
+
+.currentWeatherStatus *{
+    font-size: .9rem;
+    margin-bottom: .3rem;
+}
+
+/* HourlyForcast */
+
+.sectionTitle{
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+}
+
+.hourlyForcastSection, .daiylyForcastSection{
+    display: inline-flex;
+    padding: 0 1rem 1rem 1rem;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 1rem;
+    overflow: scroll;
+}
+
+.hourlyForcastItem, .dailyForcastItem{
+    margin-right: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    flex-shrink: 0;
+}
+
+.hourlyForcastTime, .hourlyForcastTemp, .dailyNameDiv, .highTempDailyForcastDiv{
+    margin-top: .5rem;
+    font-size: 1.1rem;
+}
+
+.lowTempDailyForcastDiv{
+    font-size: .9rem;
+    margin-left: 0;
+}
+
+.hourlyForcastImage, .dailyForcastImage{
+    width: 4rem;
+}
+
+
+.messuringTypeSection{
+    margin-top: .9rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items:center;
+}
+
+.messuringTypeText{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.toggleBorder{
+    border-radius: 1.2rem;
+    border: 0.13rem solid rgba(39, 39, 39, 0.5);
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.toggleBall{
+    background-color: rgba(41, 41, 41, 0.5);
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.toggleBorder:hover{
+    cursor: pointer;
+}
+
+.clickedToggle{
+    background-color: var(--sideBar-main-color);
+    border: 0.13rem solid rgba(39, 39, 39, 0);
+}
+
+.clickedToggle .toggleBall{
+    margin-left: auto;
+    background-color: whitesmoke;
+}
+
