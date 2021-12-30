@@ -11,9 +11,9 @@ function initURL(cityName){
     // let key = 'pGuO66eACAaohMRWg609GScW6WhSfrBS'
     let key = 'AGGlEh0AJojABzAfRuCHS7obG6AB9arV'
 
-    currentConditionsURL = `http://dataservice.accuweather.com/currentconditions/v1/${cityID}?apikey=${key}&details=true`
-    hourlyForcastURL = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${cityID}?apikey=${key}&metric=true`
-    dailyForcastURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityID}?apikey=${key}&metric=true`
+    currentConditionsURL = `https://dataservice.accuweather.com/currentconditions/v1/${cityID}?apikey=${key}&details=true`
+    hourlyForcastURL = `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${cityID}?apikey=${key}&metric=true`
+    dailyForcastURL = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityID}?apikey=${key}&metric=true`
 
 }
 
